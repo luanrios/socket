@@ -5,4 +5,4 @@ if type.upper() == "HTTP":
 	method = raw_input("Metodo (GET OU POST):\n")
 	url = raw_input("Endereco:\n")
 	requisicao = method + " " + url + " " + "HTTP/1.1"
-	 
+	
