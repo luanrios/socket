@@ -1,0 +1,16 @@
+1) (dominio.ufba.br, dns.dominio.ufba.br, NS)
+   (dns.dominio.ufba.br, IP1, A)
+
+2) (games.dominio.ufba.br, IP2, A)
+   (www.dominio.ufba.br, IP2, A)
+   (pop.dominio.ufba.br, IP2, A)
+   (mail.dominio.ufba.br, IP3, A)
+   (dns.dominio.ufba.br, IP1, A)
+
+3) (mail.dominio.ufba.br, IP3, A)
+   (dominio.ufba.br, mail.dominio.ufba.br, MX)
+
+4) (dominio.ufba.br, dnssecundario.dominio.ufba.br, NS)
+   (dnssecundario.ufba.br, IP4, A)
+
+
