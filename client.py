@@ -72,23 +72,26 @@ if type.upper() == "FTP":
 		print reply
 
 if type.upper() == "SMTP":
+
+	smtp_server = raw_input('Digite o servidor SMTP\n')
+
+	# Conexao SMTP segura (TLS/SSL) - porta:587 e inicia TLS
+	clientSocket = smtplib.SMTP(smtp_server, 587)
+	clientSocket.starttls()
+
+	#Autenticacao e Login
 	email_username = raw_input('Digite seu email\n')
 	email_password = getpass.getpass('Digite sua senha\n')
+	clientSocket.login(email_username,email_password)
+
+	#Mensagem
 	email_to = raw_input('Digite o email do destinatario\n')
 	email_subject = raw_input('Digite o assunto\n')
 	email_body = raw_input('Digite a mensagem\n')
 
-	#email_username = raw_input('testando.protocolo.smtp@gmail.com')
-
-	message = "From: " + email_username + "\r\n" + "To: " + email_to + "\r\n" + "Subject: " + email_subject + "\r\n" + email_body
-
-	# When an SMTP connection is secured via TLS/SSL, it is done over port 465
-	clientSocket = smtplib.SMTP_SSL('smtp.gmail.com', 465)
-	clientSocket.ehlo()
-
-	clientSocket.login(email_username,email_password)
+	#Envia o email e encerra a conexão
+	message = "From: " + email_username + "\r\n" + "To: " + email_to + "\r\n" + "Subject: " + email_subject + "\r\n\n" + email_body
 	clientSocket.sendmail(email_username, email_to, message)
-
-	#modifiedSentence = clientSocket.recv(1024)
-	# print modifiedSentence
 	clientSocket.quit()
+	
+	#email_username = raw_input('testando.protocolo.smtp@gmail.com')
