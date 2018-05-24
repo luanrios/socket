@@ -35,24 +35,32 @@ if type.upper() == "HTTP":
 """
 
 if type.upper() == "FTP":
-	serverName = 'ftp.cs.brown.edu'
-	serverPort = 21
+	#serverName = 'ftp.cs.brown.edu'
+	serverName = raw_input('Digite o servidor\n')
+	#serverPort = 21
+	serverPort = raw_input('Digite a porta\n')
+	serverPort = int(serverPort)
+
 	clientSocket = socket(AF_INET, SOCK_STREAM)
 	clientSocket.connect((serverName,serverPort))
-	reply = ''
 
 	# Grab initial message
 	reply = clientSocket.recv(65535)
 	print reply
+
+	clientSocket.close()
 	
 	# Anonymous login
+"""
 	login = "USER anonymous\r\n"
 	print("ftp> " + login)
 	clientSocket.send(login)
 	reply = clientSocket.recv(65535)
 	print reply
+"""
 
 	# Establish passive connection
+"""
 	message = "PASV\r\n"
 	print("ftp> " + message)
 	clientSocket.send(message)
@@ -66,7 +74,9 @@ if type.upper() == "FTP":
 	# Connect to PASV port
 	dataSocket = socket(AF_INET, SOCK_STREAM)
 	dataSocket.connect((serverName, data_port))
+"""
 
+"""
 	data_commands = ["LIST", "GET"]
 	
 	while True:
@@ -83,6 +93,7 @@ if type.upper() == "FTP":
 			reply = clientSocket.recv(65535)
 			
 		print reply
+"""
 
 if type.upper() == "SMTP":
 
