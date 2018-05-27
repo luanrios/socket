@@ -1,17 +1,13 @@
 1) (dominio.ufba.br, dns.dominio.ufba.br, NS)
    (dns.dominio.ufba.br, IP1, A)
 
-2) (dominio2.ufba.br, IP2, A)
-   (dominio2.ufba.br, dns.dominio.ufba.br, NS)
-   (dominio2.ufba.br, games.dominio.ufba.br, CNAME)
-   (dominio2.ufba.br, www.dominio.ufba.br, CNAME)
-   (dominio2.ufba.br, pop.dominio.ufba.br, CNAME)
+2) (dominio.ufba.br, IP2, A)
+   (dominio.ufba.br, games.dominio.ufba.br, CNAME)
+   (dominio.ufba.br, www.dominio.ufba.br, CNAME)
+   (dominio.ufba.br, pop.dominio.ufba.br, CNAME)
 
-3) (dominio3.ufba.br, IP3, A)
-   (dominio3.ufba.br, dns.dominio.ufba.br, NS)
-   (dominio3.ufba.br, mail.dominio.ufba.br, MX)
+3) (mailserver.dominio.ufba.br, IP3, A)
+   (mailserver.dominio.ufba.br, mail.dominio.ufba.br, MX)
 
 4) (dominio.ufba.br, dnssecundario.dominio.ufba.br, NS)
    (dnssecundario.ufba.br, IP4, A)
-   (dominio2.ufba.br, dnssecundario.dominio.ufba.br, NS)
-   (dominio3.ufba.br, dnssecundario.dominio.ufba.br, NS)
